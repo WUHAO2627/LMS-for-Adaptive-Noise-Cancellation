@@ -1,4 +1,4 @@
-# Vibration \(\mathbf{C}\)ompensation \(\mathbf{A}\)lgorithm Demo
+# vibration / perturbation rejection
 > \(\mathbf{A}\)daptive vibration / perturbation rejection solution based on LMS adaptive filtering, designed for embedded system deployment.
 
 ## Overview
