@@ -1,13 +1,13 @@
-# vibration / perturbation rejection
-> \(\mathbf{A}\)daptive vibration / perturbation rejection solution based on LMS adaptive filtering, designed for embedded system deployment.
+# Adaptive vibration / perturbation rejection
+> The solution is based on LMS adaptive filtering, designed for embedded system deployment.
 
 ## Overview
-This repository contains the demo and technical documentation of a vibration compensation algorithm, originally developed as a technical demonstration for Tesla. The implementation is derived from proven industrial experience: the core algorithm has been deployed in embedded systems for vibration perturbation rejection at \(\mathbf{A}\)BB, with verified satisfactory performance in real-world applications.
+This repository contains the demo and technical documentation of a vibration compensation algorithm, originally developed as a technical demonstration for Tesla. The core algorithm has been deployed in embedded systems for vibration perturbation rejection at ABB, with verified satisfactory performance in real-world applications.
 
 The core idea of the algorithm:
 > Using the measurable vibration source signal to estimate the coupled vibration interference in the mixed signal, we apply the Least Mean Squares (LMS) adaptive algorithm to minimize the estimation error. When the algorithm converges, the output error is exactly the target signal with vibration interference removed.
 
-## System \(\mathbf{A}\)rchitecture
+## System Architecture
 The algorithm works with two physically measurable signals and reconstructs the clean target signal through adaptive system identification:
 
 | Signal ID | Signal Name | Description |
@@ -19,7 +19,7 @@ The algorithm works with two physically measurable signals and reconstructs the 
 
 The algorithm identifies the transfer characteristic from vibration source ① to coupled interference ② in real time, then subtracts the estimated interference from the mixed signal ④ to recover the target signal.
 
-## \(\mathbf{C}\)ore \(\mathbf{A}\)lgorithm & Theory
+## Core Math Algorithm & Theory
 ### 1. Problem Formulation
 The core task is to identify the linear transformation that maps the measured vibration source signal to the actual interference component in the mixed signal. We model the system with a linear difference equation (FIR/IIR filter structure):
 $$
@@ -31,14 +31,14 @@ Where:
 - $\hat{y}(k)$: estimated vibration interference component
 - $a_i, b_j$: filter coefficients to be identified
 
-### 2. Linear System \(\mathbf{A}\)ssumption
+### 2. Linear System Assumption
 The algorithm is built on the linear system assumption: signals in the system satisfy superposition property. The mixed signal can be decomposed as:
 $$
 d(k) = \(y(k)\) + \(s(k)\) + \(n(k)\)
 $$
 Where $\(s(k)\)$ is the target signal, $\(y(k)\)$ is the vibration interference, and $\(n(k)\)$ is background noise.
 
-### 3. LMS \(\mathbf{A}\)daptive Optimization
+### 3. LMS Adaptive Optimization
 We define the estimation error as:
 $$
 \varepsilo\(n(k)\) = d(k) - \hat{y}(k)
@@ -75,13 +75,13 @@ The demo includes full simulation verification with ideal signals:
 - **\(\mathbf{A}\)daptive performance**: \(\mathbf{A}\)utomatically tracks time-varying vibration characteristics and system parameter drift
 - **Embedded-friendly**: Low computational complexity of LMS, suitable for resource-constrained embedded platforms
 - **Wide applicability**: Extendable to various perturbation rejection scenarios beyond mechanical vibration
-- **Industrial proven**: \(\mathbf{C}\)ore methodology validated in real industrial products at \(\mathbf{A}\)BB
+- **Industrial proven**: Core methodology validated in real industrial products at ABB
 
 ## Limitations & Notes
 1.  **Linear system assumption**: The algorithm assumes the physical system is linear. For strongly nonlinear applications, additional calibration and testing are required.
 2.  **Measurable vibration source**: The algorithm requires direct acquisition of the vibration source signal (signal ①).
 3.  **\(\mathbf{C}\)onvergence conditions**: Error convergence is subject to input signal characteristics and filter parameter settings. Real-world applications require targeted calibration and parameter tuning.
-4.  **Ideal demo**: This repository demonstrates the algorithm in an ideal scenario. \(\mathbf{C}\)omplex physical systems require on-site testing and calibration before deployment.
+4.  **Ideal demo**: This repository demonstrates the algorithm in an ideal scenario. Complex physical systems require on-site testing and calibration before deployment.
 
 ## Repository Structure
 ```
@@ -96,6 +96,6 @@ The demo includes full simulation verification with ideal signals:
 2.  \(\mathbf{A}\)djust filter order and LMS step size parameters according to your specific application scenario.
 3.  For embedded deployment, refer to the implementation in `embedded_ref/` and optimize for your target hardware.
 
-## \(\mathbf{A}\)uthor
+## Author
 Hao Wu
-With industrial experience in embedded vibration compensation system development at \(\mathbf{A}\)BB.
+With industrial experience in embedded vibration compensation system development at ABB.
