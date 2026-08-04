@@ -1,5 +1,6 @@
 # Adaptive vibration / perturbation rejection
 > The solution is based on LMS adaptive filtering, designed for embedded system deployment.
+Contact me if you need DSP based c code
 
 ## Overview
 This repository contains the demo and technical documentation of a vibration compensation algorithm, originally developed as a technical demonstration for Tesla. The core algorithm has been deployed in embedded systems for vibration perturbation rejection at ABB, with verified satisfactory performance in real-world applications.
