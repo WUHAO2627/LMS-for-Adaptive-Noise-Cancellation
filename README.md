@@ -3,7 +3,7 @@
 Contact me if you need DSP based c code
 
 ## Overview
-This repository contains the demo and technical documentation of a vibration compensation algorithm, originally developed as a technical demonstration for Tesla. The core algorithm has been deployed in embedded systems for vibration perturbation rejection at ABB, with verified satisfactory performance in real-world applications.
+This repository contains the demo and technical documentation of a vibration compensation algorithm, originally developed as a technical demonstration for. The core algorithm has been deployed in embedded systems for vibration perturbation rejection at ABB, with verified satisfactory performance in real-world applications.
 
 The core idea of the algorithm:
 > Using the measurable vibration source signal to estimate the coupled vibration interference in the mixed signal, we apply the Least Mean Squares (LMS) adaptive algorithm to minimize the estimation error. When the algorithm converges, the output error is exactly the target signal with vibration interference removed.
